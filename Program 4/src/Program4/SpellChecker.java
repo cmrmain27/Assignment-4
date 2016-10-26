@@ -1,14 +1,12 @@
 /*
 * INFO I-211/CSCI C-202
-* SpellChecker.java
-* Purpose: This program is create a spellchecker that will compare each word in 
-* a sent-in file with a dictionary of correctly spelled words to determine 
-* whether or not a word is spelled properly. The purpose of this program is to 
-* show how Linked Lists in programming can solve real-world problems. 
+* MyArrayList.java
+* Purpose: To create a LinkedList and LinkedList methods without using 
+* java.util.*; in order to understant how LinkedList works. 
 * 
 * Dr. Hettiarachchi
 * Cody Main 
-* October 21-25, 2016
+* October 18-21, 2016
 */ 
 
 package Program4;
@@ -24,7 +22,6 @@ public class SpellChecker {
     protected long compsNotFound;
     MyLinkedList[] dictionary = new MyLinkedList[26];
     
-    int[] array = new int[1]; 
     
     
     public SpellChecker()
@@ -36,14 +33,12 @@ public class SpellChecker {
     }
     
     
-    /**
-    * @requires the String form of the name of the dictionary that is to be read.
-    * @ensures all the words in the dictionary will be put into each of their 
-    * respective nodes based on alphabetical order of the words. Each of the 26
-    * nodes will contain all the words that begin with the same respective 
-    * letter in alphabetical order. 
-    */
+    
+    
+    
+    
     public void populateDictionary(String fname)
+   
     { 
         File f = new File (fname);
         
@@ -57,7 +52,9 @@ public class SpellChecker {
             { 
                 word = input.nextLine().toLowerCase(); 
                 
-                dictionary[word.charAt(0) - 97].add(word);  
+                dictionary[word.charAt(0) - 97].add(word);
+//                System.out.println("File reading: " + word);
+                //insert into dictionary linked list hash at correct index
             } 
             input.close();
         } 
@@ -67,14 +64,9 @@ public class SpellChecker {
         } 
     }
         
-    
-        /**
-        * @requires the String form of the name of the file that is to be read.
-        * @ensures the file will be read in line by line and will check to see 
-        * whether or not each word is spelled correctly. Will count the words 
-        * found, the words not found, the comparisons taken to find the words 
-        * found, and the comparisons taken to find the words not found. 
-        */
+        
+        
+        
         public void populateTextFile(String fname)
         { 
         File f = new File (fname);
@@ -83,50 +75,41 @@ public class SpellChecker {
         { 
             Scanner input = new Scanner(f);
             
+            
+                       
             while (input.hasNext())  
             { 
-                String word = input.nextLine().toLowerCase();                 
+                String word = input.nextLine().toLowerCase(); 
                 
-                String[] stringArray = word.split(" ");
+                if (dictionary[word.charAt(0) - 97].contains(word))
+                {
+                    wordsFound++;
+                    compsFound = compsFound + i;
+                }
+                
+                
+                
+                String[] splitLine = word.split(" ");
                 
                 StringBuilder sb = new StringBuilder();
                 
-                for (int i = 0; i < stringArray.length; i++) 
+                for (int i = 0; i < splitLine.length; i++) 
                 {
-                    for (int j = 0; j < stringArray[i].length(); j++) 
+                    for (int j = 0; j < splitLine[i].length(); j++) 
                     {
-                        if (Character.isLetter(stringArray[i].charAt(j)))
-//                        if ((Character.isLetter(stringArray[i].charAt(j))) 
-//                                || (stringArray[i].charAt(j) == 96))
-                                
+                        if (Character.isLetter(splitLine[i].charAt(i)))
                         {
-                            sb.append(stringArray[i].charAt(j));
-                        }  
-                    }   
-                    
-                    if (!sb.toString().isEmpty())
-                    {
-                        if (dictionary[sb.charAt(0) - 97].contains(sb.toString(), array))
-                        {
-//                            if (dictionary[sb.charAt(0) - 97].contains(sb.toString(), array))
-//                            {
-//                                wordsFound++;
-//                                compsFound = compsFound + array[0]; 
-//                            }
-                                
-                            wordsFound++;
-                            compsFound = compsFound + array[0];  
+                            sb.append(splitLine[i].charAt(i));
+                            
+                            
+                            
+                            
                         }
                         
-                        else
-                        {
-                            wordsNotFound++;
-                            compsNotFound = compsNotFound + array[0];
-                        }
                     }
-                    //System.out.println(sb.toString());
-                    sb.setLength(0);
+                    
                 }
+                
             } 
             input.close();
         } 

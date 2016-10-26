@@ -1,16 +1,8 @@
 /*
-* INFO I-211/CSCI C-202
-* SpellCheckerMain.java
-* Purpose: This program is create a spellchecker that will compare each word in 
-* a sent-in file with a dictionary of correctly spelled words to determine 
-* whether or not a word is spelled properly. The purpose of this program is to 
-* show how Linked Lists in programming can solve real-world problems. 
-* 
-* Dr. Hettiarachchi
-* Cody Main 
-* October 21-25, 2016
-*/ 
-
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package Program4;
 
 import java.util.*;
@@ -31,21 +23,40 @@ public class SpellCheckerMain {
         
         a.populateDictionary("random_dictionary.txt");
         
+        
+//        for (int i = 0; i < a.dictionary[5].size() ; i++) {
+//            System.out.println(a.dictionary[5].get(i));
+//            
+//        }
+        
+        
         a.populateTextFile("Oliver.txt");
+        
+        for (int i = 0; i < a.dictionary[5].size() ; i++) {
+            System.out.println(a.dictionary[5].get(i));
+            
+        }
+        
+        
+        
+        
+        
+        
+        if ( list.contains(wordToBeSearched, i))
+        {
+            wordsFound++;
+            compsFound += count[0];
+        }
+        else
+        {
+            wordsNotFound++;
+            compsNotFound += count[0];
+        }
+
 
         
-        System.out.println("");
-        System.out.println("=================================================");
-        System.out.println("Counter Display...");
-        System.out.println("=================================================");
-        System.out.println("");
-        System.out.println("Words Found: " + a.wordsFound);
-        System.out.println("");
-        System.out.println("Words Not Found: " + a.wordsNotFound);
-        System.out.println("");
-        System.out.println("Average Comparisons Found: " + (a.compsFound/a.wordsFound));
-        System.out.println("");
-        System.out.println("Average Comparisons Not Found: " + (a.compsNotFound/a.wordsNotFound));
+        
+        
 
         
         

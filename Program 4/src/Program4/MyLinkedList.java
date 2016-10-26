@@ -1,14 +1,11 @@
 /*
 * INFO I-211/CSCI C-202
-* MyLinkedList.java
-* Purpose: This program is create a spellchecker that will compare each word in 
-* a sent-in file with a dictionary of correctly spelled words to determine 
-* whether or not a word is spelled properly. The purpose of this program is to 
-* show how Linked Lists in programming can solve real-world problems. 
+* MyArrayList.java
+* Purpose: 
 * 
 * Dr. Hettiarachchi
 * Cody Main 
-* October 21-25, 2016
+* October 21, 2016
 */ 
 
 package Program4;
@@ -191,30 +188,22 @@ public class MyLinkedList<E> extends MyAbstractList<E> {
         return false; 
     }
     
-    /**
-     * @requires a generic type E and an array of integers. 
-     * @ensures returns true if the parameter e is found as an element in the 
-     * node, else returns false. The array of integers increments regardless 
-     * of the condition because it is counting the number of comparisons 
-     * taken to find the specified element in the node. 
-     */
-    public boolean contains(E e, int[] count) 
+    
+    
+    public boolean contains(E e, int[] count) // array i has only one element, value is 0.
     {
-        int i = 0;
-        
+        count[0] = i; 
         Node <E> temp = head;
         while(temp.next != null)
         {
-            i++;
             if (e.equals(temp.element))
             {
-                count[0] = i; 
-                return true; 
+                return true;
             }
             temp = temp.next;
-            count[0] = i;
         }
         return false; 
+        
     }
     
     

@@ -1,14 +1,12 @@
 /*
 * INFO I-211/CSCI C-202
-* MyAbstractList.java
-* Purpose: This program is create a spellchecker that will compare each word in 
-* a sent-in file with a dictionary of correctly spelled words to determine 
-* whether or not a word is spelled properly. The purpose of this program is to 
-* show how Linked Lists in programming can solve real-world problems. 
+* MyArrayList.java
+* Purpose: To create a LinkedList and LinkedList methods without using 
+* java.util.*; in order to understant how LinkedList works. 
 * 
 * Dr. Hettiarachchi
 * Cody Main 
-* October 21-25, 2016
+* October 18-21, 2016
 */ 
 
 package Program4;
