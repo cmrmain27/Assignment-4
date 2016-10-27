@@ -1,12 +1,16 @@
 /*
 * INFO I-211/CSCI C-202
-* MyArrayList.java
-* Purpose: To create a LinkedList and LinkedList methods without using 
-* java.util.*; in order to understant how LinkedList works. 
+* MyList.java
+* Purpose: This program is designed to read in a dictionary as a Linked List  
+* according the first letters of each word, read in a file, check to see if 
+* each word in the file is found in the dictionary, and increments counters 
+* depending on words found, words not found, comparisons found, and 
+* comparisons not found. This program applies the use of LinkedLists to a 
+* real world problem. 
 * 
 * Dr. Hettiarachchi
 * Cody Main 
-* October 18-21, 2016
+* October 21-25, 2016
 */ 
 
 package Program4;
@@ -22,7 +26,7 @@ public class SpellChecker {
     protected long compsNotFound;
     MyLinkedList[] dictionary = new MyLinkedList[26];
     
-    
+    int[] array = new int[1];
     
     public SpellChecker()
     {
@@ -36,9 +40,11 @@ public class SpellChecker {
     
     
     
-    
+    /**
+     * @requires 
+     * @ensures 
+     */
     public void populateDictionary(String fname)
-   
     { 
         File f = new File (fname);
         
@@ -66,7 +72,10 @@ public class SpellChecker {
         
         
         
-        
+        /**
+        * @requires 
+        * @ensures 
+        */
         public void populateTextFile(String fname)
         { 
         File f = new File (fname);
@@ -75,20 +84,10 @@ public class SpellChecker {
         { 
             Scanner input = new Scanner(f);
             
-            
-                       
             while (input.hasNext())  
             { 
                 String word = input.nextLine().toLowerCase(); 
-                
-                if (dictionary[word.charAt(0) - 97].contains(word))
-                {
-                    wordsFound++;
-                    compsFound = compsFound + i;
-                }
-                
-                
-                
+
                 String[] splitLine = word.split(" ");
                 
                 StringBuilder sb = new StringBuilder();
@@ -100,16 +99,27 @@ public class SpellChecker {
                         if (Character.isLetter(splitLine[i].charAt(i)))
                         {
                             sb.append(splitLine[i].charAt(i));
-                            
-                            
-                            
-                            
                         }
                         
                     }
+                    System.out.println(sb.toString());
+                    sb.setLength(0);
                     
                 }
                 
+                if (!sb.toString().isEmpty())
+                {
+                    if (dictionary[word.charAt(0) - 97].contains(array))
+                    {
+                        wordsFound++;
+                        compsFound = array[0];
+                    }
+                    else
+                    {
+                        wordsNotFound++; 
+                        compsNotFound = array[0];
+                    }
+                }
             } 
             input.close();
         } 

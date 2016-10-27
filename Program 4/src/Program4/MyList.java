@@ -1,12 +1,16 @@
 /*
 * INFO I-211/CSCI C-202
-* MyArrayList.java
-* Purpose: To create a LinkedList and LinkedList methods without using 
-* java.util.*; in order to understant how LinkedList works. 
+* MyList.java
+* Purpose: This program is designed to read in a dictionary as a Linked List  
+* according the first letters of each word, read in a file, check to see if 
+* each word in the file is found in the dictionary, and increments counters 
+* depending on words found, words not found, comparisons found, and 
+* comparisons not found. This program applies the use of LinkedLists to a 
+* real world problem. 
 * 
 * Dr. Hettiarachchi
 * Cody Main 
-* October 18-21, 2016
+* October 21-25, 2016
 */ 
 
 package Program4;
@@ -28,7 +32,7 @@ public interface MyList<E> {
   /** Return true if this list contains the element */
   public boolean contains(E e);
 
-  
+  /** Return true and increment count if this list contains the element */
   public boolean contains(E e, int[] count);
   
   

@@ -1,8 +1,18 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+* INFO I-211/CSCI C-202
+* MyList.java
+* Purpose: This program is designed to read in a dictionary as a Linked List  
+* according the first letters of each word, read in a file, check to see if 
+* each word in the file is found in the dictionary, and increments counters 
+* depending on words found, words not found, comparisons found, and 
+* comparisons not found. This program applies the use of LinkedLists to a 
+* real world problem. 
+* 
+* Dr. Hettiarachchi
+* Cody Main 
+* October 21-25, 2016
+*/ 
+
 package Program4;
 
 import java.util.*;
@@ -23,46 +33,23 @@ public class SpellCheckerMain {
         
         a.populateDictionary("random_dictionary.txt");
         
-        
-//        for (int i = 0; i < a.dictionary[5].size() ; i++) {
-//            System.out.println(a.dictionary[5].get(i));
-//            
-//        }
-        
-        
         a.populateTextFile("Oliver.txt");
         
-        for (int i = 0; i < a.dictionary[5].size() ; i++) {
-            System.out.println(a.dictionary[5].get(i));
-            
-        }
         
-        
-        
-        
-        
-        
-        if ( list.contains(wordToBeSearched, i))
-        {
-            wordsFound++;
-            compsFound += count[0];
-        }
-        else
-        {
-            wordsNotFound++;
-            compsNotFound += count[0];
-        }
-
-
-        
-        
-        
-
-        
-        
-        
-        
-        
-        
+        System.out.println("");
+        System.out.println("=================================================");
+        System.out.println("Counter Testing...");
+        System.out.println("=================================================");
+        System.out.println("");
+        System.out.println("Number of Words Found: " + a.wordsFound);
+        System.out.println("");
+        System.out.println("Number of Words Not Found: " + a.wordsNotFound);
+        System.out.println("");
+        System.out.println("Average Comparisons Found: " + a.compsFound/a.wordsFound);
+        System.out.println("");
+        System.out.println("Average Comparisons Not Found: " + a.compsNotFound/a.wordsNotFound);
+        System.out.println("");
+        System.out.println("=================================================");
+                
     }
 }

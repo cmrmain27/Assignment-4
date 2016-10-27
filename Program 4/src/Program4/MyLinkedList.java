@@ -1,11 +1,16 @@
 /*
 * INFO I-211/CSCI C-202
-* MyArrayList.java
-* Purpose: 
+* MyLinkedList.java
+* Purpose: This program is designed to read in a dictionary as a Linked List  
+* according the first letters of each word, read in a file, check to see if 
+* each word in the file is found in the dictionary, and increments counters 
+* depending on words found, words not found, comparisons found, and 
+* comparisons not found. This program applies the use of LinkedLists to a 
+* real world problem. 
 * 
 * Dr. Hettiarachchi
 * Cody Main 
-* October 21, 2016
+* October 21-25, 2016
 */ 
 
 package Program4;
@@ -189,18 +194,26 @@ public class MyLinkedList<E> extends MyAbstractList<E> {
     }
     
     
-    
+    /**
+     * @requires an element of generic type E and an single-dimensional array 
+     * of integers. 
+     * @ensures the element will return true or false depending on if the 
+     * element of type E is found in the node. The integer array will implement 
+     * regardless of the return. 
+     */
     public boolean contains(E e, int[] count) // array i has only one element, value is 0.
     {
-        count[0] = i; 
+        int i = 0;  
         Node <E> temp = head;
         while(temp.next != null)
         {
             if (e.equals(temp.element))
             {
+                count[0] = i;
                 return true;
             }
             temp = temp.next;
+            count[0] = i;
         }
         return false; 
         
