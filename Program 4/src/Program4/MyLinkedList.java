@@ -207,6 +207,7 @@ public class MyLinkedList<E> extends MyAbstractList<E> {
         Node <E> temp = head;
         while(temp.next != null)
         {
+            i++;
             if (e.equals(temp.element))
             {
                 count[0] = i;

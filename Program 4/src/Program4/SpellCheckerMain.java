@@ -45,9 +45,9 @@ public class SpellCheckerMain {
         System.out.println("");
         System.out.println("Number of Words Not Found: " + a.wordsNotFound);
         System.out.println("");
-        System.out.println("Average Comparisons Found: " + a.compsFound/a.wordsFound);
+        System.out.println("Average Comparisons Found: " + a.compsFound / a.wordsFound);
         System.out.println("");
-        System.out.println("Average Comparisons Not Found: " + a.compsNotFound/a.wordsNotFound);
+        System.out.println("Average Comparisons Not Found: " + a.compsNotFound / a.wordsNotFound);
         System.out.println("");
         System.out.println("=================================================");
                 
