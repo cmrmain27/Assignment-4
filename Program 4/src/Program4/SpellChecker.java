@@ -41,8 +41,10 @@ public class SpellChecker {
     
     
     /**
-     * @requires 
-     * @ensures 
+     * @requires the string version of the file name of the dictionary 
+     * that you are wanting to read in.
+     * @ensures the dictionary will be read into the 26 Linked Lists according 
+     * to the first letter of each word. 
      */
     public void populateDictionary(String fname)
     { 
@@ -59,8 +61,6 @@ public class SpellChecker {
                 word = input.nextLine().toLowerCase(); 
                 
                 dictionary[word.charAt(0) - 97].add(word);
-//                System.out.println("File reading: " + word);
-                //insert into dictionary linked list hash at correct index
             } 
             input.close();
         } 
@@ -73,8 +73,11 @@ public class SpellChecker {
         
         
         /**
-        * @requires 
-        * @ensures 
+        * @requires the string version of the file name of the file 
+        * that you are wanting to read in. 
+        * @ensures the file will be read in, each word is compared in the 
+        * dictionary to find a match, and the counters are incremented 
+        * depending on the results. 
         */
         public void populateTextFile(String fname)
         { 
@@ -96,7 +99,7 @@ public class SpellChecker {
                 {
                     for (int j = 0; j < splitLine[i].length(); j++) 
                     {
-                        if (Character.isLetter(splitLine[i].charAt(i)))
+                        if ((Character.isLetter(splitLine[i].charAt(i))) || (splitLine[i].charAt(i)) == '\'')
                         {
                             sb.append(splitLine[i].charAt(i));
                         }
