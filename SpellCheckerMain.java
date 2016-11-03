@@ -1,6 +1,6 @@
 /*
 * INFO I-211/CSCI C-202
-* MyList.java
+* SpellCheckerMain.java
 * Purpose: This program is designed to read in a dictionary as a Linked List  
 * according the first letters of each word, read in a file, check to see if 
 * each word in the file is found in the dictionary, and increments counters 
